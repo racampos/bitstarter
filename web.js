@@ -2,6 +2,10 @@ var express = require('express');
 
 var app = express.createServer(express.logger());
 
+buf = new Buffer(16);
+
+var fs = require('fs');
+
 app.get('/', function(request, response) {
   response.send(buf.toString(fs.readFileSynch('index.html')));
 });
